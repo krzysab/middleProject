@@ -1,19 +1,49 @@
 package domain;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Person extends Address implements DAO {
+@Data
+@NoArgsConstructor
+@Entity
+@Table(name = "person")
 
+public class Person extends Address implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "person_id", nullable = false, length = 10)
+    private int id;
+
+    @Column(name = "person_name", nullable = false, length = 20)
     private String name;
+
+    @Column(name = "person_secondName", nullable = false, length = 20)
     private String secondName;
+
+    @Column(name = "person_birthYear", nullable = false, length = 4)
     private int birthYear;
+
+    @Column(name = "person_height", nullable = false, length = 4)
     private int height;
+
+    @Column(name = "person_weight", nullable = false, length = 10)
     private double weight;
+
+    @Column(name = "person_language", nullable = true)
     private Language language;
+
+    @Embedded
     private Address address;
 
-    public Person() {
-    }
+
+//    adnotacja @NoArgsConstructor wymusila zakomentowanie bezparametrowego konstruktora
+    /*public Person() {
+    }*/
 
     public Person(String name, String secondName, int birthYear, int height,
                   double weight, Language language, Address address) {
