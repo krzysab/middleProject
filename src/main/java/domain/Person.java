@@ -5,14 +5,13 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Objects;
 
 @Data
 @NoArgsConstructor
 @Entity
 @Table(name = "person")
 
-public class Person extends Address implements Serializable {
+public class Person implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,7 +44,7 @@ public class Person extends Address implements Serializable {
     /*public Person() {
     }*/
 
-    public Person(String name, String secondName, int birthYear, int height,
+    /*public Person(String name, String secondName, int birthYear, int height,
                   double weight, Language language, Address address) {
         this.name = name;
         this.secondName = secondName;
@@ -166,5 +165,5 @@ public class Person extends Address implements Serializable {
 
     public void updatePerson(Person person) {
 
-    }
+    }*/
 }

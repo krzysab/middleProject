@@ -4,12 +4,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
 import javax.persistence.Table;
-import java.util.Objects;
 
 @Embeddable
-@Entity
 @NoArgsConstructor
 @Table(name = "address")
 
@@ -33,7 +30,7 @@ class Address {
     /*public Address() {
     }*/
 
-    public Address(String street, int building, String local, String city, String post) {
+    /*public Address(String street, int building, String local, String city, String post) {
         this.street = street;
         this.building = building;
         this.local = local;
@@ -107,5 +104,5 @@ class Address {
                 ", city='" + city + '\'' +
                 ", post='" + post + '\'' +
                 '}';
-    }
+    }*/
 }
