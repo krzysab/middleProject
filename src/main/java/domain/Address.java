@@ -14,6 +14,7 @@ class Address {
 
     @Column(name = "address_street", nullable = false, length = 30)
     private String street;
+    //hello
 
     @Column(name = "address_building", nullable = false, length = 5)
     private int building;
